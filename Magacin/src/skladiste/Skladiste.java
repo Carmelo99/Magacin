@@ -1,26 +1,44 @@
 package skladiste;
 
+
+import java.util.List;
+
 import artikli.Artikal;
 import interfejsmagacina.MagacinInterfejs;
 
 public class Skladiste implements MagacinInterfejs {
 
+	List<Artikal> artikli;
+	
 	@Override
 	public void dodajArtikal(Artikal artikal) {
-		// TODO Auto-generated method stub
+		
+		artikli.add(0, artikal);
 
 	}
 
 	@Override
 	public void izbaciArtikal(Artikal artikal) {
-		// TODO Auto-generated method stub
+		for (Artikal a: artikli) {
+			if (a.equals(artikal)) {
+				artikli.remove(a);
+			}
+		}
 
 	}
 
 	@Override
 	public Artikal pronadjiArtikal(int sifra) {
-		// TODO Auto-generated method stub
+		if (sifra<=0) {
 		return null;
+		} else {
+			for (Artikal a: artikli) {
+				if (a.getSifra()==sifra) {
+					return a;
+				}
+			}
+			return null;
+		}
 	}
 
 }
