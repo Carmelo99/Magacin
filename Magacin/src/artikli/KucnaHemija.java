@@ -11,6 +11,9 @@ public class KucnaHemija extends Artikal{
 	}
 
 	public void setRokTrajanja(Date rokTrajanja) {
+		if (rokTrajanja==null) {
+			throw new NullPointerException("Datum ne sme biti null");
+		}
 		this.rokTrajanja = rokTrajanja;
 	}
 	
