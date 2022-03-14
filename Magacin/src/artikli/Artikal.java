@@ -38,8 +38,8 @@ public abstract class Artikal {
 		return kolicina;
 	}
 	public void setKolicina(int kolicina) {
-		if (kolicina<=0) {
-			throw new NullPointerException("Kolicina ne sme biti manja ili jednaka 0");
+		if (kolicina<0) {
+			throw new NullPointerException("Kolicina ne sme biti manja od 0");
 		}
 		this.kolicina = kolicina;
 	}
